@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { readdirSync } from "fs"
+import { HomeController } from "../controllers/home.controller";
 
 const PATH_ROUTER = `${__dirname}`
 
@@ -21,4 +22,5 @@ readdirSync(PATH_ROUTER).filter((fileName) => {
     }
 })
 
+router.get("/", HomeController)
 export default router
